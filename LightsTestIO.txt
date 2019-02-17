@@ -1,0 +1,222 @@
+------------- TrunOff() -------------
+1 1 1 	 3 lights ON initially
+0 1 1 	 Turn OFF Light 0
+0 1 0 	 Turn OFF Light 2
+1 1 0 	 Turn ON Light 0
+1 0 0 	 Turn OFF Light 1
+0 0 0 	 Turn OFF Light 0
+-------------------------------------
+1 1 1 1 	 4 lights ON initially
+1 0 1 1 	 Turn OFF Light 1
+0 0 1 1 	 Turn OFF Light 0
+0 0 1 0 	 Turn OFF Light 3
+1 0 1 0 	 Turn ON Light 0
+1 1 1 0 	 Turn ON Light 1
+0 1 1 0 	 Turn OFF Light 0
+0 1 0 0 	 Turn OFF Light 2
+1 1 0 0 	 Turn ON Light 0
+1 0 0 0 	 Turn OFF Light 1
+0 0 0 0 	 Turn OFF Light 0
+-------------------------------------
+1 1 1 1 1 	 5 lights ON initially
+0 1 1 1 1 	 Turn OFF Light 0
+0 1 0 1 1 	 Turn OFF Light 2
+1 1 0 1 1 	 Turn ON Light 0
+1 0 0 1 1 	 Turn OFF Light 1
+0 0 0 1 1 	 Turn OFF Light 0
+0 0 0 1 0 	 Turn OFF Light 4
+1 0 0 1 0 	 Turn ON Light 0
+1 1 0 1 0 	 Turn ON Light 1
+0 1 0 1 0 	 Turn OFF Light 0
+0 1 1 1 0 	 Turn ON Light 2
+1 1 1 1 0 	 Turn ON Light 0
+1 0 1 1 0 	 Turn OFF Light 1
+0 0 1 1 0 	 Turn OFF Light 0
+0 0 1 0 0 	 Turn OFF Light 3
+1 0 1 0 0 	 Turn ON Light 0
+1 1 1 0 0 	 Turn ON Light 1
+0 1 1 0 0 	 Turn OFF Light 0
+0 1 0 0 0 	 Turn OFF Light 2
+1 1 0 0 0 	 Turn ON Light 0
+1 0 0 0 0 	 Turn OFF Light 1
+0 0 0 0 0 	 Turn OFF Light 0
+-------------------------------------
+1 1 1 1 1 1 	 6 lights ON initially
+1 0 1 1 1 1 	 Turn OFF Light 1
+0 0 1 1 1 1 	 Turn OFF Light 0
+0 0 1 0 1 1 	 Turn OFF Light 3
+1 0 1 0 1 1 	 Turn ON Light 0
+1 1 1 0 1 1 	 Turn ON Light 1
+0 1 1 0 1 1 	 Turn OFF Light 0
+0 1 0 0 1 1 	 Turn OFF Light 2
+1 1 0 0 1 1 	 Turn ON Light 0
+1 0 0 0 1 1 	 Turn OFF Light 1
+0 0 0 0 1 1 	 Turn OFF Light 0
+0 0 0 0 1 0 	 Turn OFF Light 5
+1 0 0 0 1 0 	 Turn ON Light 0
+1 1 0 0 1 0 	 Turn ON Light 1
+0 1 0 0 1 0 	 Turn OFF Light 0
+0 1 1 0 1 0 	 Turn ON Light 2
+1 1 1 0 1 0 	 Turn ON Light 0
+1 0 1 0 1 0 	 Turn OFF Light 1
+0 0 1 0 1 0 	 Turn OFF Light 0
+0 0 1 1 1 0 	 Turn ON Light 3
+1 0 1 1 1 0 	 Turn ON Light 0
+1 1 1 1 1 0 	 Turn ON Light 1
+0 1 1 1 1 0 	 Turn OFF Light 0
+0 1 0 1 1 0 	 Turn OFF Light 2
+1 1 0 1 1 0 	 Turn ON Light 0
+1 0 0 1 1 0 	 Turn OFF Light 1
+0 0 0 1 1 0 	 Turn OFF Light 0
+0 0 0 1 0 0 	 Turn OFF Light 4
+1 0 0 1 0 0 	 Turn ON Light 0
+1 1 0 1 0 0 	 Turn ON Light 1
+0 1 0 1 0 0 	 Turn OFF Light 0
+0 1 1 1 0 0 	 Turn ON Light 2
+1 1 1 1 0 0 	 Turn ON Light 0
+1 0 1 1 0 0 	 Turn OFF Light 1
+0 0 1 1 0 0 	 Turn OFF Light 0
+0 0 1 0 0 0 	 Turn OFF Light 3
+1 0 1 0 0 0 	 Turn ON Light 0
+1 1 1 0 0 0 	 Turn ON Light 1
+0 1 1 0 0 0 	 Turn OFF Light 0
+0 1 0 0 0 0 	 Turn OFF Light 2
+1 1 0 0 0 0 	 Turn ON Light 0
+1 0 0 0 0 0 	 Turn OFF Light 1
+0 0 0 0 0 0 	 Turn OFF Light 0
+-------------------------------------
+------------- flipSwitches() -------------
+1 1 1 	 3 lights ON initially
+0 1 1 	 Turn OFF Light 0
+0 1 0 	 Turn OFF Light 2
+1 1 0 	 Turn ON Light 0
+1 0 0 	 Turn OFF Light 1
+0 0 0 	 Turn OFF Light 0
+-------------------------------------------
+1 1 1 1 	 4 lights ON initially
+1 0 1 1 	 Turn OFF Light 1
+0 0 1 1 	 Turn OFF Light 0
+0 0 1 0 	 Turn OFF Light 3
+1 0 1 0 	 Turn ON Light 0
+1 1 1 0 	 Turn ON Light 1
+0 1 1 0 	 Turn OFF Light 0
+0 1 0 0 	 Turn OFF Light 2
+1 1 0 0 	 Turn ON Light 0
+1 0 0 0 	 Turn OFF Light 1
+0 0 0 0 	 Turn OFF Light 0
+-------------------------------------------
+1 1 1 1 1 	 5 lights ON initially
+0 1 1 1 1 	 Turn OFF Light 0
+0 1 0 1 1 	 Turn OFF Light 2
+1 1 0 1 1 	 Turn ON Light 0
+1 0 0 1 1 	 Turn OFF Light 1
+0 0 0 1 1 	 Turn OFF Light 0
+0 0 0 1 0 	 Turn OFF Light 4
+1 0 0 1 0 	 Turn ON Light 0
+1 1 0 1 0 	 Turn ON Light 1
+0 1 0 1 0 	 Turn OFF Light 0
+0 1 1 1 0 	 Turn ON Light 2
+1 1 1 1 0 	 Turn ON Light 0
+1 0 1 1 0 	 Turn OFF Light 1
+0 0 1 1 0 	 Turn OFF Light 0
+0 0 1 0 0 	 Turn OFF Light 3
+1 0 1 0 0 	 Turn ON Light 0
+1 1 1 0 0 	 Turn ON Light 1
+0 1 1 0 0 	 Turn OFF Light 0
+0 1 0 0 0 	 Turn OFF Light 2
+1 1 0 0 0 	 Turn ON Light 0
+1 0 0 0 0 	 Turn OFF Light 1
+0 0 0 0 0 	 Turn OFF Light 0
+-------------------------------------------
+1 1 1 1 1 1 	 6 lights ON initially
+1 0 1 1 1 1 	 Turn OFF Light 1
+0 0 1 1 1 1 	 Turn OFF Light 0
+0 0 1 0 1 1 	 Turn OFF Light 3
+1 0 1 0 1 1 	 Turn ON Light 0
+1 1 1 0 1 1 	 Turn ON Light 1
+0 1 1 0 1 1 	 Turn OFF Light 0
+0 1 0 0 1 1 	 Turn OFF Light 2
+1 1 0 0 1 1 	 Turn ON Light 0
+1 0 0 0 1 1 	 Turn OFF Light 1
+0 0 0 0 1 1 	 Turn OFF Light 0
+0 0 0 0 1 0 	 Turn OFF Light 5
+1 0 0 0 1 0 	 Turn ON Light 0
+1 1 0 0 1 0 	 Turn ON Light 1
+0 1 0 0 1 0 	 Turn OFF Light 0
+0 1 1 0 1 0 	 Turn ON Light 2
+1 1 1 0 1 0 	 Turn ON Light 0
+1 0 1 0 1 0 	 Turn OFF Light 1
+0 0 1 0 1 0 	 Turn OFF Light 0
+0 0 1 1 1 0 	 Turn ON Light 3
+1 0 1 1 1 0 	 Turn ON Light 0
+1 1 1 1 1 0 	 Turn ON Light 1
+0 1 1 1 1 0 	 Turn OFF Light 0
+0 1 0 1 1 0 	 Turn OFF Light 2
+1 1 0 1 1 0 	 Turn ON Light 0
+1 0 0 1 1 0 	 Turn OFF Light 1
+0 0 0 1 1 0 	 Turn OFF Light 0
+0 0 0 1 0 0 	 Turn OFF Light 4
+1 0 0 1 0 0 	 Turn ON Light 0
+1 1 0 1 0 0 	 Turn ON Light 1
+0 1 0 1 0 0 	 Turn OFF Light 0
+0 1 1 1 0 0 	 Turn ON Light 2
+1 1 1 1 0 0 	 Turn ON Light 0
+1 0 1 1 0 0 	 Turn OFF Light 1
+0 0 1 1 0 0 	 Turn OFF Light 0
+0 0 1 0 0 0 	 Turn OFF Light 3
+1 0 1 0 0 0 	 Turn ON Light 0
+1 1 1 0 0 0 	 Turn ON Light 1
+0 1 1 0 0 0 	 Turn OFF Light 0
+0 1 0 0 0 0 	 Turn OFF Light 2
+1 1 0 0 0 0 	 Turn ON Light 0
+1 0 0 0 0 0 	 Turn OFF Light 1
+0 0 0 0 0 0 	 Turn OFF Light 0
+-------------------------------------------
+------------- flipSwitches() -------------
+0 0 0 0 0 	 5 lights ON initially
+1 0 0 0 0 	 Turn ON Light 0
+1 1 0 0 0 	 Turn ON Light 1
+0 1 0 0 0 	 Turn OFF Light 0
+0 1 1 0 0 	 Turn ON Light 2
+1 1 1 0 0 	 Turn ON Light 0
+1 0 1 0 0 	 Turn OFF Light 1
+0 0 1 0 0 	 Turn OFF Light 0
+0 0 1 1 0 	 Turn ON Light 3
+1 0 1 1 0 	 Turn ON Light 0
+1 1 1 1 0 	 Turn ON Light 1
+0 1 1 1 0 	 Turn OFF Light 0
+0 1 0 1 0 	 Turn OFF Light 2
+1 1 0 1 0 	 Turn ON Light 0
+1 0 0 1 0 	 Turn OFF Light 1
+0 0 0 1 0 	 Turn OFF Light 0
+0 0 0 1 1 	 Turn ON Light 4
+1 0 0 1 1 	 Turn ON Light 0
+1 1 0 1 1 	 Turn ON Light 1
+0 1 0 1 1 	 Turn OFF Light 0
+0 1 1 1 1 	 Turn ON Light 2
+1 1 1 1 1 	 Turn ON Light 0
+-------------------------------------
+------------- TurnOn() -------------
+0 0 0 0 0 	 5 lights ON initially
+1 0 0 0 0 	 Turn ON Light 0
+1 1 0 0 0 	 Turn ON Light 1
+0 1 0 0 0 	 Turn OFF Light 0
+0 1 1 0 0 	 Turn ON Light 2
+1 1 1 0 0 	 Turn ON Light 0
+1 0 1 0 0 	 Turn OFF Light 1
+0 0 1 0 0 	 Turn OFF Light 0
+0 0 1 1 0 	 Turn ON Light 3
+1 0 1 1 0 	 Turn ON Light 0
+1 1 1 1 0 	 Turn ON Light 1
+0 1 1 1 0 	 Turn OFF Light 0
+0 1 0 1 0 	 Turn OFF Light 2
+1 1 0 1 0 	 Turn ON Light 0
+1 0 0 1 0 	 Turn OFF Light 1
+0 0 0 1 0 	 Turn OFF Light 0
+0 0 0 1 1 	 Turn ON Light 4
+1 0 0 1 1 	 Turn ON Light 0
+1 1 0 1 1 	 Turn ON Light 1
+0 1 0 1 1 	 Turn OFF Light 0
+0 1 1 1 1 	 Turn ON Light 2
+1 1 1 1 1 	 Turn ON Light 0
+-------------------------------------

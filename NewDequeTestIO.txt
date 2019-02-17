@@ -1,0 +1,21 @@
+Current Stack: Front: [3, 7]; Back: [5]
+isEmpty(): false
+first(): 7
+removeLast(): 5
+Current Stack: Front: [3, 7]; Back: []
+size(): 2
+removeLast(): 3
+Current Stack: Front: []; Back: [7]
+removeFirst(): 7
+Current Stack: Front: []; Back: []
+isEmpty(): true
+removeFirst(): null
+Current Stack: Front: []; Back: []
+addFirst(6)
+Current Stack: Front: [6]; Back: []
+last(): 6
+addFirst(8)
+Current Stack: Front: [8]; Back: [6]
+isEmpty(): false
+last(): 6
+Current Stack: Front: [8]; Back: [6]

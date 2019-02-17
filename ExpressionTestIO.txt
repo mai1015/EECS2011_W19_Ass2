@@ -1,0 +1,42 @@
+--------------------------
+Test exp 1: a+b*c)/d))+c)
+Result UPPE exp: b c * d / a + c + 
+Result FPIE exp: ((a + ((b * c) / d)) + c)
+
+Test exp 2: a+b+c+d)))
+Result UPPE exp: c d + b + a + 
+Result FPIE exp: (a + (b + (c + d)))
+
+Test exp 3: 1+2+3))*4*5))
+Result UPPE exp: 2 3 + 1 + 4 5 * * 
+Result FPIE exp: ((1 + (2 + 3)) * (4 * 5))
+
+Test exp 4: a
++	st)*a+_c))
+Result UPPE exp: a st + a _c + * 
+Result FPIE exp: ((a + st) * (a + _c))
+
+Test exp 5: a+aa+a))
+Result UPPE exp: aa a + a + 
+Result FPIE exp: (a + (aa + a))
+
+Test exp 6: a + 20)/b – c)*53.4 – d)))
+Result UPPE exp: a 20 + b c – 53.4 d – * / 
+Result FPIE exp: ((a + 20) / ((b – c) * (53.4 – d)))
+
+--------------------------
+Test exp 1: a+b+c)
+Invalid RPIE: Illegal RPIE
+
+Test exp 2: s+)
+Invalid RPIE: Mismatch Operand
+
+Test exp 3: a a a
+Invalid RPIE: Mismatch Operator
+
+Test exp 4: +
+Invalid RPIE: Mismatch Operand
+
+Test exp 5: s+
++ b
+Invalid RPIE: Mismatch Operand
