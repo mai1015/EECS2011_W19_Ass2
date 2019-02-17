@@ -1,0 +1,290 @@
+\documentclass[12pt, a4paper, twoside]{article}
+\usepackage[utf8]{inputenc}%codification of the document
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=3pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+\raggedbottom
+\newcommand{\me}{e}
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
+\title{\textbf{Assignment \#2}}
+\author{\\Zhili Mai\\Student Number: 215234842\\Instructor: Andy Mirzaian}
+\date{February 15th, 2019}
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\begin{enumerate}
+  \item Imagine a row of n lights , numbered 1 to n, that can be turned on or off only under certain conditions as follows. The first light can be turned on or off anytime. Each of the other lights can be turned on or off only when the preceding light is on and all other lights before it are off. If all the lights are on initially, how can you turn them all off? For three lights numbered 1 to 3, you can take the following steps, where 1 indicates a light that is ON and 0 indicates OFF:
+
+  \begin{tabular}{rl}
+    111& 3 lights ON initially\\
+    011& Turn OFF light 1 \\
+    010& Turn OFF light 3 \\
+    110& Turn ON light 1 \\
+    100& Turn OFF light 2 \\
+    000& Turn OFF light 1
+  \end{tabular}
+
+  We can solve this problem by indirect recursion using the two methods turnOff() and turnOn() that mutually call each other. The algorithm in pseudo-code for turnOff(n) is shown below:
+  \begin{enumerate}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=.2cm,align=left]
+  \item Write a similar algorithm in pseudo-code for turnOn(n).
+
+    \begin{algorithm}[H]
+    \SetAlgoLined
+    \caption{turnOn(n)}
+    \tcc{\textbf{Pre-Condition:} Light 1...n are all currently off}
+    \tcc{\textbf{Post-Condition:} Light 1...n are all turned on}
+    \eIf{$n=1$}{Turn ON light 1}{
+        turnOn($n-1$)\\
+        \If{$n > 2$}{turnOff($n-2$)}
+        Turn Off light n\\
+        \If{$n > 2$}{turnOn($n-2$)}
+    }
+    \end{algorithm}
+    \pagebreak
+
+  \item Implement these algorithms in Java. Use the results in a program to display the sequence of steps to turn off n lights that are initially on. Show the output for a few values of n. The output format should be similar to the 3-lights example shown above.\\
+  \begin{tabular}{rl}
+    \textbf{n = 4}&\\
+    1 1 1 1& 	 4 lights ON initially\\
+    1 0 1 1& 	 Turn OFF Light 1\\
+    0 0 1 1& 	 Turn OFF Light 0\\
+    0 0 1 0& 	 Turn OFF Light 3\\
+    1 0 1 0& 	 Turn ON Light 0\\
+    1 1 1 0& 	 Turn ON Light 1\\
+    0 1 1 0& 	 Turn OFF Light 0\\
+    0 1 0 0& 	 Turn OFF Light 2\\
+    1 1 0 0& 	 Turn ON Light 0\\
+    1 0 0 0& 	 Turn OFF Light 1\\
+    0 0 0 0& 	 Turn OFF Light 0
+  \end{tabular}
+
+  \begin{tabular}{rl}
+    \textbf{n = 5}&\\
+    1 1 1 1 1& 	 5 lights ON initially\\
+    0 1 1 1 1& 	 Turn OFF Light 0\\
+    0 1 0 1 1& 	 Turn OFF Light 2\\
+    1 1 0 1 1& 	 Turn ON Light 0\\
+    1 0 0 1 1& 	 Turn OFF Light 1\\
+    0 0 0 1 1& 	 Turn OFF Light 0\\
+    0 0 0 1 0& 	 Turn OFF Light 4\\
+    1 0 0 1 0& 	 Turn ON Light 0\\
+    1 1 0 1 0& 	 Turn ON Light 1\\
+    0 1 0 1 0& 	 Turn OFF Light 0\\
+    0 1 1 1 0& 	 Turn ON Light 2\\
+    1 1 1 1 0& 	 Turn ON Light 0\\
+    1 0 1 1 0& 	 Turn OFF Light 1\\
+    0 0 1 1 0& 	 Turn OFF Light 0\\
+    0 0 1 0 0& 	 Turn OFF Light 3\\
+    1 0 1 0 0& 	 Turn ON Light 0\\
+    1 1 1 0 0& 	 Turn ON Light 1\\
+    0 1 1 0 0& 	 Turn OFF Light 0\\
+    0 1 0 0 0& 	 Turn OFF Light 2\\
+    1 1 0 0 0& 	 Turn ON Light 0\\
+    1 0 0 0 0& 	 Turn OFF Light 1\\
+    0 0 0 0 0& 	 Turn OFF Light 0
+  \end{tabular}
+
+  \begin{tabular}{rl}
+    \textbf{n = 6}\\
+    1 1 1 1 1 1& 	 6 lights ON initially\\
+    1 0 1 1 1 1& 	 Turn OFF Light 1\\
+    0 0 1 1 1 1& 	 Turn OFF Light 0\\
+    0 0 1 0 1 1& 	 Turn OFF Light 3\\
+    1 0 1 0 1 1& 	 Turn ON Light 0\\
+    1 1 1 0 1 1& 	 Turn ON Light 1\\
+    0 1 1 0 1 1& 	 Turn OFF Light 0\\
+    0 1 0 0 1 1& 	 Turn OFF Light 2\\
+    1 1 0 0 1 1& 	 Turn ON Light 0\\
+    1 0 0 0 1 1& 	 Turn OFF Light 1\\
+    0 0 0 0 1 1& 	 Turn OFF Light 0\\
+    0 0 0 0 1 0& 	 Turn OFF Light 5\\
+    1 0 0 0 1 0& 	 Turn ON Light 0\\
+    1 1 0 0 1 0& 	 Turn ON Light 1\\
+    0 1 0 0 1 0& 	 Turn OFF Light 0\\
+    0 1 1 0 1 0& 	 Turn ON Light 2\\
+    1 1 1 0 1 0& 	 Turn ON Light 0\\
+    1 0 1 0 1 0& 	 Turn OFF Light 1\\
+    0 0 1 0 1 0& 	 Turn OFF Light 0\\
+    0 0 1 1 1 0& 	 Turn ON Light 3\\
+    1 0 1 1 1 0& 	 Turn ON Light 0\\
+    1 1 1 1 1 0& 	 Turn ON Light 1\\
+    0 1 1 1 1 0& 	 Turn OFF Light 0\\
+    0 1 0 1 1 0& 	 Turn OFF Light 2\\
+    1 1 0 1 1 0& 	 Turn ON Light 0\\
+    1 0 0 1 1 0& 	 Turn OFF Light 1\\
+    0 0 0 1 1 0& 	 Turn OFF Light 0\\
+    1 0 0 1 1 0& 	 Turn ON Light 0\\
+    0 0 0 1 1 0& 	 Turn OFF Light 0\\
+    0 0 0 1 0 0& 	 Turn OFF Light 4\\
+    1 0 0 1 0 0& 	 Turn ON Light 0\\
+    1 1 0 1 0 0& 	 Turn ON Light 1\\
+    0 1 0 1 0 0& 	 Turn OFF Light 0\\
+    0 1 1 1 0 0& 	 Turn ON Light 2\\
+    1 1 1 1 0 0& 	 Turn ON Light 0\\
+    1 0 1 1 0 0& 	 Turn OFF Light 1\\
+    0 0 1 1 0 0& 	 Turn OFF Light 0\\
+    0 0 1 0 0 0& 	 Turn OFF Light 3\\
+    1 0 1 0 0 0& 	 Turn ON Light 0\\
+    1 1 1 0 0 0& 	 Turn ON Light 1\\
+    0 1 1 0 0 0& 	 Turn OFF Light 0\\
+    0 1 0 0 0 0& 	 Turn OFF Light 2\\
+    1 1 0 0 0 0& 	 Turn ON Light 0\\
+    1 0 0 0 0 0& 	 Turn OFF Light 1\\
+    0 0 0 0 0 0& 	 Turn OFF Light 0
+  \end{tabular}
+
+  \item Obtain, with sufficient explanation, an accurate estimate of the number of times lights are turned off or on during the entire process. Express the answer as a function of n.
+
+  Let turnOn($n$) and turnOff($n$) be $t(n)$,if we calculate the $t(n)$
+
+  \begin{align*}
+      t(1)&=1\\
+      t(2)=1+t(1)&=2\\
+      t(3)=1+t(1)+t(1)+t(2)&=5\\
+      t(4)=1+t(2)+t(2)+t(3)&=10\\
+      t(5)=1+t(3)+t(3)+t(4)&=21\\
+      t(6)=1+t(4)+t(4)+t(5)&=42
+  \end{align*}
+
+  So we can find the recurrence relation in the equations as $t(n) = t(n-1)+2t(n-2)+1$. The base case are $t(0)=0, t(1)=1$. Base on this, we can solve the recurrence relation.
+
+  It is same as $a_{n}=a_{n-1}+a_{n-2}+1$.
+  \begin{align}
+      \text{then we rewrite it as }& x^2-x-2=0\\
+      \text{solve the function }& (x-2)(x+1)=0\\
+      \text{we have two roots }& x=2,x=-1
+  \end{align}
+  so the $a_{n}^{(h)}=\alpha(2^n)+\beta(-1)$.\\
+  we have a constant coefficients $F(n)=1$, assume it is $c$ then
+  \begin{align}
+      a&=2a+a+1\\
+      a-2a-a&=1\\
+      -2a&=1\\
+      a&=-\frac{1}{2}
+  \end{align}
+  so $a_{n}^{(p)}=-\frac{1}{2}$.\\
+  then $a_{n}=a_{n}^{(p)}+a_{n}^{(h)}=\alpha(2^n)+\beta(-1)-\frac{1}{2}$.
+  solve for $\alpha$ and $\beta$.\\
+  we have a system of equation\\
+
+  $$\begin{cases}
+  \alpha+\beta-\frac{1}{2}=0\\
+  2\alpha-\beta-\frac{1}{2}=1
+  \end{cases}$$
+
+  solve for the system we have $\alpha=\frac{2}{3}$ and $\beta=-\frac{1}{6}$.
+  so we have the function $a_{n}=\frac{2^{n+1}}{3}-\frac{(-1)^n}{6}-\frac{1}{2}$
+
+  \item Combine the two algorithms turnOff(n) and turnOn(n) and replace them with a single recursive two parameter algorithm flipSwitches(n, s) written in pseudo-code. The boolean parameter s indicates which version is intended: switching n lights ON or OFF.\\
+  \begin{algorithm}[H]
+    \SetAlgoLined
+    \caption{flipSwitches(n, s)}
+    \tcc{\textbf{Pre-Condition:} $1...n$ lights are $\neg s$ state}
+    \tcc{\textbf{Post-Condition:} $1...n$ lights are $s$ state}
+    \If{$n^{th} \text{ light is s state}$} {skip}
+    \eIf{$n=1$}{Turn ON light 1}{
+        flipSwitches($n-1$, ON)\\
+        \If{$n > 2$}{flipSwitches($n-2$, OFF)}
+        Turn Off light n\\
+        \If{$n > 2$}{flipSwitches($n-2$, ON)}
+        flipSwitches($n-1$, $s$)
+    }
+    \end{algorithm}
+    \pagebreak
+  \end{enumerate}
+
+	\item Give a Java implementation of the deque ADT (see [GTG \S 6.3] for definition) using two stacks as the only instance variables. What are the running times of the methods?\\
+	From the new Deque Java source code below. We have 10 functions. The standard deque function from books are:
+	addFirst($e$), addLast($e$), removeFirst(), removeLast(), first(), last(), size(), and isEmpty().\\
+
+	Other then the constructor, there is one helper method call $moveStack(Stack<E> a, Stack<E> b)$ that helps to pop reverse the stack.\\
+
+	Obviously, the constructor declares two stack from line 5-6. It is an $O(1)$ for the constructor.
+	Including size(), isEmpty(), addFirst(e), addLast(e) are $O(1)$  because they only do one operation, when method size(), push(), and pop() for Stack runs on $O(1)$.\\
+
+	For moveStack(a, b), if the $a$ stack is empty, it move the stack from $b$ to $a$ with a while loop , which base on how many object in $b$. This means that this will runs on approximately $n+5$ which is $O(n)$ when there are $n$ element in b.\\
+
+	Then we have first() and last() that they call to moveStack and then do basic operation on line 26-27 and 31-32. Which means they are also running on $O(n)$.\\
+
+	The last two, removeFirst() and removeLast() are basically call to moveStack which will have the same running as moveStack($a, b$), which is $O(n)$
+
+    \pagebreak
+\end{enumerate}
+\begin{lstlisting}[language=Java]
+public class NewDeque<E> {
+    private Stack<E> f;
+    private Stack<E> r;
+    public NewDeque() {
+        f = new Stack<>();
+        r = new Stack<>();
+    }
+
+    public int size() { return f.size() + r.size(); }
+    public boolean isEmpty() { return size() == 0; }
+
+    private E moveStack(Stack<E> a, Stack<E> b) {
+        if (!a.isEmpty()) {
+            return a.pop();
+        } else if (!b.isEmpty()) {
+            while (b.size() > 1) {
+                a.push(b.pop());
+            }
+            return b.pop();
+        }
+        return null;
+    }
+
+    public E first() {
+        E e = moveStack(f, r);
+        f.add(e);
+        return e;
+    }
+    public E last() {
+        E e = moveStack(r, f);
+        r.add(e);
+        return e;
+    }
+
+    public void addFirst(E e) { f.push(e); }
+    public void addLast(E e) { r.push(e); }
+
+    public E removeFirst() {
+        return moveStack(f, r);
+    }
+    public E removeLast() {
+        return moveStack(r, f);
+    }
+}
+\end{lstlisting}
+\end{document}
